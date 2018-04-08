@@ -1,0 +1,37 @@
+<p>银行列表copy页面</p>
+<div>
+  <span>银行名称：</span>
+  <input type="text" value="{{bankSelect.bankName}}" placeholder="请输入银行名称">
+</div>
+<div>
+  <span>状态选择：</span>
+  <select name="" id="">
+    <option  *ngFor="let option of options" value="{{option.id}}">{{option.name}}</option>
+  </select>
+</div>
+<table>
+  <thead>
+     <th>银行ID</th>
+     <th>银行名称</th>
+     <th>图标</th>
+     <th>服务区域</th>
+     <th>推广标签</th>
+     <th>推广文案/关键词</th>
+     <th>最后编辑时间</th>
+     <th>状态</th>
+     <th>操作</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of bankListData">
+      <td>{{data.id}}</td>
+      <td>{{data.bankName}}</td>
+      <td><img class="bank-logo" src="{{data.logoUrl}}" alt=""></td>
+      <td><div class="text-overflow" title="{{data.serviceArea}}">{{data.serviceArea}}</div></td>
+      <td>{{data.label}}</td>
+      <td>>{{data.adSlogan}}</td>
+      <td>{{data.updateTime}}</td>
+      <td>{{data.status}}</td>
+      <td><button  [routerLink]="['/banks/edit', data.id]">编辑</button></td>
+    </tr>
+  </tbody>
+</table>

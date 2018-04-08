@@ -1,0 +1,7 @@
+{
+  "/": {
+    "target": "http://121.43.183.201",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
